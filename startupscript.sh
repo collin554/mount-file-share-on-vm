@@ -3,14 +3,14 @@
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 az login -u $1 -p $2
-az account set --subscription "c0f06edc-2ea7-4dfa-b9de-7536b27fcbfa"
+az account set --subscription $3
 
 sudo apt update
 sudo apt install cifs-utils
 
-resourceGroupName=$3
-storageAccountName=$4
-fileShareName=$5
+resourceGroupName=$4
+storageAccountName=$5
+fileShareName=$6
 
 mntPath="file-share-mount/"
 
