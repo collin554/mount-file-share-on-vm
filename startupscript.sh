@@ -2,8 +2,6 @@
 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-az login -u $1 -p $2
-az account set --subscription $3
 
 sudo apt update
 sudo apt install cifs-utils
@@ -13,6 +11,9 @@ storageAccountName=$5
 fileShareName=$6
 sftpUserName=$7
 sftpUserPW=$8
+
+az login -u $1 -p $2
+az account set --subscription $3
 
 httpEndpoint=$(az storage account show \
     --resource-group $resourceGroupName \
