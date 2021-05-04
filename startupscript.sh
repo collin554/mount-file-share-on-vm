@@ -25,7 +25,7 @@ storageAccountKey=$(az storage account keys list \
     --account-name $storageAccountName \
     --query "[0].value" | tr -d '"')
 
-sudo adduser $sftpUserName
+sudo adduser $sftpUserName --gecos ",,," --disabled-password
 echo "$sftpUserName:$sftpUserPW" | sudo chpasswd
 
 sudo mkdir -p /home/sftp/uploads
